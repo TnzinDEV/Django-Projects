@@ -1,23 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Produtos</title>
 </head>
 <body>
+
     <nav>
-        <ul></ul>
-        <li><a href="http://127.0.0.1:8000/produtos/">Produtos</a></li>
-        <li><a href="http://127.0.0.1:8000/">Inicio</a></li>
-    </ul>
+        <ul>
+            <li>
+                <a href="/produtos/">Produtos</a>
+            </li>
+            <li>
+                <a href="/">Início</a>
+            </li>
+        </ul>
     </nav>
+
     <h1>Nossos Produtos:</h1>
-    <div class="card">
-        <h2>{{nome}}</h2>
-        <h3>{{preco}}</h3>
-        <p>{{estoque}}</p>
-    </div>
-    
+
+    <ul class="card">
+        {% for i in produtos %}
+            <li>
+                <h2>{{ i.nome }}</h2>
+                <h3>Preço: R$ {{ i.preco }}</h3>
+                <p>Estoque: {{ i.estoque }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
