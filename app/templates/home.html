@@ -1,20 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Home</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
     <section id="test">
         <nav>
-            <a href="http://127.0.0.1:8000/produtos/"></a>
-            <a href="http://127.0.0.1:8000/"></a>
-            <button><a href="perfil.html"></a></button>
+            
         </nav>
         <h1>Test do Tn</h1>
     </section>
-</body>
-</html>
+{% endblock %}
